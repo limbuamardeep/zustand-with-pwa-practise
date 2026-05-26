@@ -1,27 +1,27 @@
-import { useCartStore } from "./store/cartStore";
+import { useCartStore } from "../store/cartStore";
 
 export const Cart =() => {
   
   const {removeFromCart,reset, cart}=useCartStore();
   return (
-    <div className="mt-3 flex flex-colfi gap-2">
+    <div className="mt-3 flex flex-col gap-2">
       <h1 className="font-bold">Cart</h1>
       {cart.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
-        <ul>
+        <div className="flex flex-col gap-2">
           {cart.map((product) => (
-            <li key={product.id}>
+            <div key={product.id} className="flex flex-col gap-3 w-fit">
               <div>
                 <span>{product.name}</span>
                 <span>{product.description}</span>
               </div>
-              <button type="button" onClick={() => removeFromCart(product.id)} className="border px-2">
+              <button type="button" onClick={() => removeFromCart(product.id)} className="border px-2 w-fit">
                 Remove
               </button>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
       <div className="flex justify-center items-center">
         {cart.length > 0 && (

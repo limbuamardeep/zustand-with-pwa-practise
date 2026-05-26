@@ -1,5 +1,5 @@
-import type { Product } from './Products'
-import { useCartStore } from './store/cartStore'
+import type { Product } from '../constants/Products'
+import { useCartStore } from '../store/cartStore'
 
 type ProductListProps = {
   products: Product[]
@@ -13,7 +13,7 @@ export const ProductList = ({ products}: ProductListProps) => {
         <div key={product.id} >
           <h3>{product.name}</h3>
           <p>{product.description}</p>
-          <button type="button" onClick={() => {addToCart(product)}} className='border px-2'>
+          <button type="button" onClick={() => {addToCart(product)}} className='border px-2 hover:underline hover:cursor-pointer'>
             Add to Cart
           </button>
         </div>

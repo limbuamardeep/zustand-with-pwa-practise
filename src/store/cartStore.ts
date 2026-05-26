@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import type { Product } from '../Products'
+import type { Product } from '../constants/Products'
 
 type CartStore = {
     cart: Product[]
