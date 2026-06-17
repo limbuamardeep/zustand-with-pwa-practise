@@ -1,3 +1,4 @@
+import { Button } from '@zustand/ui/button'
 import type { Product } from '../constants/Products'
 import { useCartStore } from '../store/cartStore'
 
@@ -13,9 +14,9 @@ export const ProductList = ({ products}: ProductListProps) => {
         <div key={product.id} >
           <h3>{product.name}</h3>
           <p>{product.description}</p>
-          <button type="button" onClick={() => {addToCart(product)}} className='border px-2 hover:underline hover:cursor-pointer'>
+          <Button variant='primary' onClick={() => {addToCart(product)}} >
             Add to Cart
-          </button>
+          </Button>
         </div>
       ))}
     </div>

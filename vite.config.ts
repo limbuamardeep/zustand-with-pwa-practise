@@ -1,9 +1,16 @@
 import { defineConfig } from "vite";
+import { resolve } from "path";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@zustand/ui/button': resolve(__dirname, '../../packages/ui/src/Button.tsx'),
+      '@zustand/ui/card': resolve(__dirname, '../../packages/ui/src/Card.tsx'),
+    },
+  },
   plugins: [
     react(),
     tailwindcss(),
